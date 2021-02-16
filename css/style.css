@@ -1,27 +1,35 @@
-h2 {
-    color:rgb(17, 17, 146);
+body {background-image: url(../img/family.jpg) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+img{width: 40%;
+    padding-left: 30%;
+    padding-bottom: 100px;
+    filter: opacity(75%);}
+    h2 {
+    color:rgb(7, 7, 24);
     font-family: 'Merienda', cursive;
     font-size: xx-large;
 }
 a {font-size: xx-large;
-
+    
 }
 h3 {
-    color:rgb(66, 66, 187);
+    color:rgb(6, 6, 31);
     font-family: 'Merienda', cursive;
 }
 ul, li{
     font-family: 'Lemonada', cursive;
-    color: rgb(54, 141, 228);
+    color: rgb(45, 59, 73);
 }
-img{float:right;
-vertical-align: middle; 
-}
-
-
 p {
-    color:rgb(66, 66, 187);
+    padding-bottom: 20px;
+    padding-right: 10%;
+    padding-left: 10% ;
+    line-height: 25px;
+    color:rgb(156, 11, 113);
     font-family: 'Merienda', cursive;
-    /* text-align: center; */
     text-align-last: center;
+    font-size: large;
 }

@@ -5,8 +5,14 @@ let divEl = document.getElementById('cookieStand');
 let tableEl = document.createElement('table');
 divEl.appendChild(tableEl);
 
+const seattle = new Branches('Seattle', 23, 65, 6.3, [], 0);
+const tokyo = new Branches('Tokyo', 3, 24, 1.2, [], 0);
+const dubai = new Branches('Dubai', 11, 38, 3.7, [], 0);
+const paris = new Branches('Paris', 20, 38, 2.3, [], 0);
+const lima = new Branches('Lima', 2, 16, 4.6, [], 0);
+
 function randomGenerator(min, max) {
-  return Math.floor((Math.random() * (max - min + 1)) + min);
+  return Math.ceil(Math.floor(Math.random() * (max - min + 1)) + min);
 }
 function header() {
   const hrEl = document.createElement('tr');
@@ -16,38 +22,33 @@ function header() {
     hrEl.appendChild(hcEl);
     hcEl.textContent = opTime[i];
   }}
-function Branches(location, min, max, avgCookie, cookiePurArray, total) {
+function Branches(location, min, max, avgCookie, cookiephArr, total) {
   this.location = location;
   this.min = min;
   this.max = max;
   this.avgCookie = avgCookie;
-  this.cookiePurArray = cookiePurArray;
+  this.cookieAv = cookiephArr;
   this.total = total;
-  Branches.prototype.getCookiePerCust = function () {
-    for (let i = 0; i < (opTime.length - 1); i++) {
-      this.cookiePurArray[i] = Math.floor(randomGenerator(this.min, this.max) * this.avgCookie);
-      this.total += this.cookiePurArray[i];
+  Branches.prototype.avgCookiesgen = function () {
+    for (let i = 0; i < (opTime.length - 2); i++) {
+      this.cookieAv[i] = Math.ceil(Math.floor(randomGenerator(this.min, this.max) * this.avgCookie));
+      this.total += this.cookieAv[i];
     }
-    this.cookiePurArray[14] = this.total;
+    this.cookieAv[14] = this.total;
   },
   Branches.prototype.render = function () {
-    this.getCookiePerCust();
+    this.avgCookiesgen();
     const dataRowEl = document.createElement('tr');
     tableEl.appendChild(dataRowEl);
     const dataCellEl = document.createElement('td');
     dataRowEl.appendChild(dataCellEl);
     dataCellEl.textContent = this.location;
-    for (let i = 0; i < this.cookiePurArray.length; i++) {
+    for (let i = 0; i < this.cookieAv.length; i++) {
       const dataCellEl = document.createElement('td');
       dataRowEl.appendChild(dataCellEl);
-      dataCellEl.textContent = this.cookiePurArray[i];
-      allTotal[i] += this.cookiePurArray[i];
+      dataCellEl.textContent = this.cookieAv[i];
+      allTotal[i] += this.cookieAv[i];
     }};}
-const seattle = new Branches('Seattle', 23, 65, 6.3, [], 0);
-const tokyo = new Branches('Tokyo', 3, 24, 1.2, [], 0);
-const dubai = new Branches('Dubai', 11, 38, 3.7, [], 0);
-const paris = new Branches('Paris', 20, 38, 2.3, [], 0);
-const lima = new Branches('Lima', 2, 16, 4.6, [], 0);
 function footer() {
   const footerRowEl = document.createElement('tr');
   tableEl.appendChild(footerRowEl);

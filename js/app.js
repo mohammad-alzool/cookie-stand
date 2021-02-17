@@ -66,21 +66,19 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+footer();
+
 let form = document.getElementById('new');
 form.addEventListener('submit', function(event){
   event.preventDefault();
-  let location = event.target.location.value;
+  let location = event.target.newlocation.value;
   let min = event.target.minimum.value;
   let max = event.target.maximum.value;
   let avgCookie = event.target.average.value;
   let newBranch = new Branches(location,min,avgCookie,max,[], 0);
-  // if (Branches.includes(location.value)) {
-  //   alert('wrong entry');
-  // }else{
   tableEl.deleteRow(tableEl.rows.length-1);
   newBranch.render();
   footer();
   form.reset();
 });
-footer();
 

@@ -16,16 +16,16 @@
             <fieldset>
               <legend>ADD BRANCH </legend>
               <label for='location'>location</label>
-              <input type='text' id='location' placeholder='Branch location' />
+              <input type='text' id='location' placeholder='Branch location' pattern='[A-Za-z]{1,}' />
     
               <label for='maximum'>max</label>
-              <input type='text' id='maximum' placeholder='The maximum number of customers per hour.' />
+              <input type='text' id='maximum' placeholder='The maximum number of customers per hour.' pattern='[0-9]{1,}' />
     
               <label for='minimum'>minimum</label>
               <input type='text' id='minimum' placeholder='The minimum number of customers per hour' />
     
               <label for='average'>average</label>
-              <input type='text' id='average' placeholder='The average number of cookies purchased per customer' />
+              <input type='text' id='average' placeholder='The average number of cookies purchased per customer' pattern='[0-9]{1,}' />
     
               <input type='submit' />
             </fieldset>

@@ -74,11 +74,13 @@ form.addEventListener('submit', function(event){
   let max = event.target.maximum.value;
   let avgCookie = event.target.average.value;
   let newBranch = new Branches(location,min,avgCookie,max,[], 0);
+  // if (Branches.includes(location.value)) {
+  //   alert('wrong entry');
+  // }else{
   tableEl.deleteRow(tableEl.rows.length-1);
   newBranch.render();
   footer();
   form.reset();
 });
-
-
 footer();
+

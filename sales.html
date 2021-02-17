@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Salmon Cookies sales page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Lemonada&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap' rel='stylesheet'>
     <link rel='stylesheet' type='text/css' media='screen' href='./css/rest.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./css/sales.css'>
     <a href='./index.html'>home</a>
@@ -12,9 +12,27 @@
 <body>
     <img src='./img/salmon.png' alt='./img/salmon.png'>
     <header>
+        <form id='new'>
+            <fieldset>
+              <legend>ADD BRANCH </legend>
+              <label for='location'>location</label>
+              <input type='text' id='location' placeholder='Branch location' />
+    
+              <label for='maximum'>max</label>
+              <input type='text' id='maximum' placeholder='The maximum number of customers per hour.' />
+    
+              <label for='minimum'>minimum</label>
+              <input type='text' id='minimum' placeholder='The minimum number of customers per hour' />
+    
+              <label for='average'>average</label>
+              <input type='text' id='average' placeholder='The average number of cookies purchased per customer' />
+    
+              <input type='submit' />
+            </fieldset>
+          </form>
     </header>
     <main>
-        <section id="cookieStand">
+        <section id='cookieStand'>
         </section>
     </main>
 </body>

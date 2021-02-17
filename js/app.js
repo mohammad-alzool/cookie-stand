@@ -5,20 +5,20 @@ let divEl = document.getElementById('cookieStand');
 let tableEl = document.createElement('table');
 divEl.appendChild(tableEl);
 
-const seattle = new Branches('Seattle', 23, 65, 6.3, [], 0);
-const tokyo = new Branches('Tokyo', 3, 24, 1.2, [], 0);
-const dubai = new Branches('Dubai', 11, 38, 3.7, [], 0);
-const paris = new Branches('Paris', 20, 38, 2.3, [], 0);
-const lima = new Branches('Lima', 2, 16, 4.6, [], 0);
+let seattle = new Branches('Seattle', 23, 65, 6.3, [], 0);
+let tokyo = new Branches('Tokyo', 3, 24, 1.2, [], 0);
+let dubai = new Branches('Dubai', 11, 38, 3.7, [], 0);
+let paris = new Branches('Paris', 20, 38, 2.3, [], 0);
+let lima = new Branches('Lima', 2, 16, 4.6, [], 0);
 
 function randomGenerator(min, max) {
   return Math.ceil(Math.floor(Math.random() * (max - min + 1)) + min);
 }
 function header() {
-  const hrEl = document.createElement('tr');
+  let hrEl = document.createElement('tr');
   tableEl.appendChild(hrEl);
   for (let i = 0; i < opTime.length; i++) {
-    const hcEl = document.createElement('th');
+    let hcEl = document.createElement('th');
     hrEl.appendChild(hcEl);
     hcEl.textContent = opTime[i];
   }}
@@ -38,13 +38,13 @@ function Branches(location, min, max, avgCookie, cookiephArr, total) {
   },
   Branches.prototype.render = function () {
     this.avgCookiesgen();
-    const dataRowEl = document.createElement('tr');
+    let dataRowEl = document.createElement('tr');
     tableEl.appendChild(dataRowEl);
-    const dataCellEl = document.createElement('td');
+    let dataCellEl = document.createElement('td');
     dataRowEl.appendChild(dataCellEl);
     dataCellEl.textContent = this.location;
     for (let i = 0; i < this.cookieAv.length; i++) {
-      const dataCellEl = document.createElement('td');
+      let dataCellEl = document.createElement('td');
       dataRowEl.appendChild(dataCellEl);
       dataCellEl.textContent = this.cookieAv[i];
       allTotal[i] += this.cookieAv[i];
@@ -66,4 +66,19 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+let form = document.getElementById('new');
+form.addEventListener('submit', function(event){
+  event.preventDefault();
+  let location = event.target.location.value;
+  let min = event.target.minimum.value;
+  let max = event.target.maximum.value;
+  let avgCookie = event.target.average.value;
+  let newBranch = new Branches(location,min,avgCookie,max,[], 0);
+  tableEl.deleteRow(tableEl.rows.length-1);
+  newBranch.render();
+  footer();
+  form.reset();
+});
+
+
 footer();

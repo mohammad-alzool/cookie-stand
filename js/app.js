@@ -22,8 +22,8 @@ function header() {
     hrEl.appendChild(hcEl);
     hcEl.textContent = opTime[i];
   }}
-function Branches(location, min, max, avgCookie, cookiephArr, total) {
-  this.location = location;
+function Branches(locations, min, max, avgCookie, cookiephArr, total) {
+  this.locations = locations;
   this.min = min;
   this.max = max;
   this.avgCookie = avgCookie;
@@ -42,7 +42,7 @@ function Branches(location, min, max, avgCookie, cookiephArr, total) {
     tableEl.appendChild(dataRowEl);
     let dataCellEl = document.createElement('td');
     dataRowEl.appendChild(dataCellEl);
-    dataCellEl.textContent = this.location;
+    dataCellEl.textContent = this.locations;
     for (let i = 0; i < this.cookieAv.length; i++) {
       let dataCellEl = document.createElement('td');
       dataRowEl.appendChild(dataCellEl);
@@ -75,7 +75,7 @@ form.addEventListener('submit', function(event){
   let min = event.target.minimum.value;
   let max = event.target.maximum.value;
   let avgCookie = event.target.average.value;
-  let newBranch = new Branches(location,min,avgCookie,max,[], 0);
+  let newBranch = new Branches(location,min,max,avgCookie,[], 0);
   tableEl.deleteRow(tableEl.rows.length-1);
   newBranch.render();
   footer();

@@ -1,8 +1,10 @@
-body {background-image: url(../img/family.jpg) ;
+*{font-family: Verdana, Geneva, Tahoma, sans-serif;}
+body {background-image: url(../img/family.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
+
 img{width: 40%;
     padding-left: 30%;
     padding-bottom: 100px;
@@ -12,7 +14,9 @@ img{width: 40%;
     font-family: 'Merienda', cursive;
     font-size: xx-large;
 }
-a {font-size: xx-large;
+a {font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: lightcoral;
+    font-size: xx-large;
 }
 h3 {
     color:rgb(6, 6, 31);
@@ -21,6 +25,11 @@ h3 {
 ul, li{
     font-family: 'Lemonada', cursive;
     color: rgb(45, 59, 73);
+}
+footer :nth-child(3){
+    font-size: x-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(179, 14, 14);
 }
 p {
     padding-bottom: 20px;

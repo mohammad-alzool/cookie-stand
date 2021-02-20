@@ -1,17 +1,23 @@
+*{font-family: Verdana, Geneva, Tahoma, sans-serif;}
 a {font-size: xx-large;}
- body {background-image: url(https://www.howsweeteats.com/wp-content/uploads/2011/11/gsalmon-1.jpg);
+ body {background-image:url(../img/gsalmon.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
+
+
+main::after{opacity: 50%;}
 h2 {
-    color:rgb(7, 7, 24);
+    color:rgb(24, 7, 7);
     font-family: 'Merienda', cursive;
     font-size: xx-large;
 }
 img{width: 70%;
     padding-left: 30%;
     filter: opacity(100%);}
+
+fieldset{color: ivory;}
 
 th {border-collapse: collapse;
     border: 1px solid red;
